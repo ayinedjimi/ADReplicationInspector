@@ -127,6 +127,14 @@ Ayi NEDJIMI Consultants © 2025
 
 </div>
 
+- --
+
+<div align="center">
+
+**⭐ Si ce projet vous plaît, n'oubliez pas de lui donner une étoile ! ⭐**
+
+</div>
+
 ---
 
 <div align="center">
