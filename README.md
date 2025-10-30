@@ -1,5 +1,24 @@
 # 🚀 AD Replication Inspector
 
+![C++](https://img.shields.io/badge/language-C++-blue?style=flat-square) ![License](https://img.shields.io/badge/license-MIT-green?style=flat-square) ![Maintained](https://img.shields.io/badge/Maintained%3F-yes-brightgreen?style=flat-square) ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)
+
+## 📑 Table des Matières
+
+- [📋 Description](#-description)
+- [✨ Fonctionnalités](#-fonctionnalités)
+- [🔌 APIs Utilisées](#-apis-utilisées)
+- [Compilation](#compilation)
+- [🚀 Utilisation](#-utilisation)
+- [Event IDs Réplication](#event-ids-réplication)
+- [Interprétation Latence](#interprétation-latence)
+- [📌 Prérequis](#-prérequis)
+- [Commandes Complémentaires](#commandes-complémentaires)
+- [Logging](#logging)
+- [Structure](#structure)
+- [💬 Notes](#-notes)
+
+
+
 
 **Ayi NEDJIMI Consultants - WinToolsSuite**
 
@@ -102,6 +121,14 @@ Logs sauvegardés dans: `%TEMP%\ADReplicationInspector.log`
 **WinToolsSuite** - Sécurité et Administration Windows
 Ayi NEDJIMI Consultants © 2025
 
+
+- --
+
+<div align="center">
+
+**⭐ Si ce projet vous plaît, n'oubliez pas de lui donner une étoile ! ⭐**
+
+</div>
 
 - --
 
