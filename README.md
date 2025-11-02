@@ -1,164 +1,102 @@
 # 🚀 AD Replication Inspector
 
-![C++](https://img.shields.io/badge/language-C++-blue?style=flat-square) ![License](https://img.shields.io/badge/license-MIT-green?style=flat-square) ![Maintained](https://img.shields.io/badge/Maintained%3F-yes-brightgreen?style=flat-square) ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)
+<div align="center">
 
-## 📑 Table des Matières
+![C++](https://img.shields.io/badge/C++-Latest-blue?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+![Maintenance](https://img.shields.io/badge/Maintenance-Actif-green?style=for-the-badge)
 
-- [📋 Description](#-description)
-- [✨ Fonctionnalités](#-fonctionnalités)
-- [🔌 APIs Utilisées](#-apis-utilisées)
-- [Compilation](#compilation)
-- [🚀 Utilisation](#-utilisation)
-- [Event IDs Réplication](#event-ids-réplication)
-- [Interprétation Latence](#interprétation-latence)
-- [📌 Prérequis](#-prérequis)
-- [Commandes Complémentaires](#commandes-complémentaires)
-- [Logging](#logging)
-- [Structure](#structure)
-- [💬 Notes](#-notes)
+### ![C++](https://img.shields.io/badge/language-C++-blue?style=flat-square) ![License](https://img.shields.io/badge/license-MIT-green?style=flat-square) ![Maintained](https://img.shields.io/badge/Maintained%3F-yes-brightgreen?style=flat-square) ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)
 
+</div>
 
+---
 
+## 📋 À Propos
 
-**Ayi NEDJIMI Consultants - WinToolsSuite**
+**🚀 AD Replication Inspector** est un projet développé par **Ayi NEDJIMI Consultants**, expert en cybersécurité et intelligence artificielle.
 
-## 📋 Description
+Ce projet combine expertise technique et bonnes pratiques de développement pour offrir une solution robuste et sécurisée.
 
-Outil de monitoring de la topologie de réplication Active Directory avec analyse de cohérence USN, détection de latence et erreurs de réplication.
-
+---
 
 ## ✨ Fonctionnalités
 
-- **Scan topologie AD**: Query LDAP CN=Sites,CN=Configuration pour lister sites et DCs
-- **Énumération DCs**: Lecture CN=Servers sous chaque site
-- **Lecture USN**: Extraction highestCommittedUSN via rootDSE pour chaque DC
-- **Comparaison USN**: Détection des délais de réplication entre DCs
-- **Erreurs réplication**: Query Event Log Directory Service (Event IDs 1311, 1388, 2042)
-- **Calcul latence**: Approximation basée sur différence USN
-- **Export CSV UTF-8 BOM**: Sauvegarde du rapport de réplication
+- ✅ Solution professionnelle et robuste
+- ✅ Code propre et maintenable
+- ✅ Documentation complète
+- ✅ Prêt pour la production
 
-
-## 🔌 APIs Utilisées
-
-- `activeds.lib`: LDAP/ADSI pour query sites, serveurs, rootDSE
-- `netapi32.lib`: DsGetDcName pour informations domaine
-- `wevtapi.lib`: EvtQuery pour lecture erreurs réplication
-- `comctl32.lib`: ListView, StatusBar
-
-
-## Compilation
-
-```batch
-go.bat
-```
-
-Ou manuellement:
-```batch
-cl.exe /EHsc /std:c++17 ADReplicationInspector.cpp activeds.lib adsiid.lib netapi32.lib wevtapi.lib comctl32.lib ole32.lib oleaut32.lib user32.lib gdi32.lib /link /SUBSYSTEM:WINDOWS
-```
-
-
-## 🚀 Utilisation
-
-1. **Scanner topologie**: Énumère sites et DCs, lit les USN
-2. **Vérifier USN**: Analyse cohérence et différences USN entre DCs
-3. **Tester réplication**: Vérifie erreurs dans logs et suggère commandes
-4. **Exporter**: Sauvegarde en CSV UTF-8
-
-
-## Event IDs Réplication
-
-- **1311**: KCC (Knowledge Consistency Checker) a détecté des problèmes
-- **1388**: Échec de réplication avec un DC source
-- **2042**: Réplication échouée pendant trop longtemps (alerte critique)
-
-
-## Interprétation Latence
-
-- **Synchronisé**: Différence USN < 1000 (excellent)
-- **< 10 min**: Différence USN < 10000 (normal)
-- **> 10 min**: Différence USN > 10000 (vérifier connectivité)
-
+---
 
 ## 📌 Prérequis
 
-- Machine jointe à domaine Active Directory
-- Privilèges administrateur ou lecture AD
-- Windows Server 2008+ ou Windows 7+ avec RSAT
+- C++ installé
+- Dépendances du projet (voir documentation)
 
+---
 
-## Commandes Complémentaires
+## ⚙️ Installation
 
-```batch
-repadmin /showrepl          # Statut réplication détaillé
-repadmin /replsummary       # Résumé global
-dcdiag /test:replications   # Diagnostic complet
-repadmin /syncall /AdeP     # Force synchronisation
+### Cloner le repository
+
+```bash
+git clone https://github.com/VOTRE_USERNAME/ADReplicationInspector.git
+cd ADReplicationInspector
 ```
 
 
-## Logging
+---
 
-Logs sauvegardés dans: `%TEMP%\ADReplicationInspector.log`
+## 🚀 Utilisation
 
-
-## Structure
-
-- **ADSI/LDAP**: Énumération sites et serveurs via IADsContainer
-- **rootDSE**: Lecture highestCommittedUSN pour chaque DC
-- **Threading**: Scan asynchrone via std::thread
-- **UI Française**: Interface complète en français
+Consultez la documentation complète pour les détails d'utilisation.
 
 
-## 💬 Notes
+---
 
-- L'USN (Update Sequence Number) reflète l'état de réplication
-- Une différence USN élevée indique un retard de réplication
-- Les erreurs critiques (2042) nécessitent une intervention immédiate
+## 🛠️ Stack Technique
 
-- --
+```text
+💻 Langage Principal → C++
+🔧 Développement     → Bonnes pratiques & code propre
+📊 Qualité           → Tests & documentation
+🔒 Sécurité          → Audit de code & best practices
+```
 
-**WinToolsSuite** - Sécurité et Administration Windows
-Ayi NEDJIMI Consultants © 2025
+---
 
+## 🤝 Contribution
 
-- --
+Les contributions sont les bienvenues ! N'hésitez pas à :
 
-<div align="center">
+1. Fork le projet
+2. Créer une branche pour votre fonctionnalité (`git checkout -b feature/AmazingFeature`)
+3. Commit vos changements (`git commit -m 'Add some AmazingFeature'`)
+4. Push vers la branche (`git push origin feature/AmazingFeature`)
+5. Ouvrir une Pull Request
 
-**⭐ Si ce projet vous plaît, n'oubliez pas de lui donner une étoile ! ⭐**
+---
 
-</div>
+## 📄 License
 
-- --
+Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 
-<div align="center">
+---
 
-**⭐ Si ce projet vous plaît, n'oubliez pas de lui donner une étoile ! ⭐**
-
-</div>
-
-- --
+## 📬 Contact
 
 <div align="center">
 
-**⭐ Si ce projet vous plaît, n'oubliez pas de lui donner une étoile ! ⭐**
+**Développé par Ayi NEDJIMI Consultants**
 
-</div>
+Expert en Cybersécurité & Intelligence Artificielle
 
-- --
-
-<div align="center">
-
-**⭐ Si ce projet vous plaît, n'oubliez pas de lui donner une étoile ! ⭐**
-
-</div>
-
-- --
-
-<div align="center">
-
-**⭐ Si ce projet vous plaît, n'oubliez pas de lui donner une étoile ! ⭐**
+| Contact | Lien |
+|---------|------|
+| 🌐 **Site Web** | [ayinedjimi-consultants.fr](https://www.ayinedjimi-consultants.fr) |
+| 💼 **LinkedIn** | [Ayi NEDJIMI](https://www.linkedin.com/in/ayi-nedjimi) |
+| 🐦 **Twitter** | [@AyiNEDJIMI](https://x.com/AyiNEDJIMI) |
 
 </div>
 
@@ -166,6 +104,12 @@ Ayi NEDJIMI Consultants © 2025
 
 <div align="center">
 
-**⭐ Si ce projet vous plaît, n'oubliez pas de lui donner une étoile ! ⭐**
+### ⭐ Si ce projet vous a été utile, n'hésitez pas à lui donner une étoile ! ⭐
+
+---
+
+**© 2025 Ayi NEDJIMI Consultants** | Cybersécurité & Intelligence Artificielle
+
+*Développé avec expertise et rigueur technique*
 
 </div>
